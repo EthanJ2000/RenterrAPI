@@ -17,13 +17,13 @@ public class PropertyController {
 
     //New Code
     @GetMapping()
-    public ResponseEntity<Property> getProperties(@RequestParam(value = "address") String address){
+    public Property getProperties(@RequestParam(value = "address") String address){
         Property property = propertyDAO.findByAddress(address);
 
         if (address == null){
-            return ResponseEntity.notFound().build();
+            return null;
         }
-        return ResponseEntity.ok().body(property);
+        return property;
     }
 
     //Save a Property
