@@ -37,6 +37,16 @@ public class PropertyController {
         return ResponseEntity.ok().body(property);
     }
 
+    //New Code
+    @GetMapping("/properties/{address}")
+    public ResponseEntity<Property> getPropertyByAddress(@PathVariable(value = "address") String address){
+        Property property = propertyDAO.findByAddress(address);
+        if (address == null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok().body(property);
+    }
+
     //Update Property by id
     @PutMapping("/properties/{id}")
     public ResponseEntity<Property> updateProperty

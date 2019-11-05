@@ -12,6 +12,9 @@ public class PropertyDAO {
     @Autowired
     PropertyRepository propertyRepository;
 
+    //New Code
+    AddressRepository addressRepository;
+
 //    Save a Property
     public Property save(Property property){
         return propertyRepository.save(property);
@@ -25,6 +28,11 @@ public class PropertyDAO {
 //    Get a Property by id
     public Property findOne(Long id){
         return propertyRepository.findById(id).orElse(null);
+    }
+
+// New Code
+    public Property findByAddress(String address){
+        return addressRepository.findByAddress(address);
     }
 
 
