@@ -12,8 +12,6 @@ public class PropertyDAO {
     @Autowired
     PropertyRepository propertyRepository;
 
-    //New Code
-    AddressRepository addressRepository;
 
 //    Save a Property
     public Property save(Property property){
@@ -30,10 +28,6 @@ public class PropertyDAO {
         return propertyRepository.findById(id).orElse(null);
     }
 
-// New Code
-    public Property findByAddress(String address){
-        return addressRepository.findByAddress(address);
-    }
 
 
 //    Delete a Property

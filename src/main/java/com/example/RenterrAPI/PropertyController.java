@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/property")
@@ -13,6 +14,15 @@ public class PropertyController {
 
     @Autowired
     PropertyDAO propertyDAO;
+
+    //New Code
+    @RequestMapping(value = "/property/properties", method = RequestMethod.GET)
+    public @ResponseBody Property getProperty(@RequestParam("id") Long id){
+            Property property = propertyDAO.findOne(id);
+            String address = property.getAddress();
+            return property;
+
+    }
 
     //Save a Property
     @PostMapping("/properties")
@@ -37,15 +47,6 @@ public class PropertyController {
         return ResponseEntity.ok().body(property);
     }
 
-    //New Code
-    @GetMapping("/properties/{address}")
-    public ResponseEntity<Property> getPropertyByAddress(@PathVariable(value = "address") String address){
-        Property property = propertyDAO.findByAddress(address);
-        if (address == null){
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok().body(property);
-    }
 
     //Update Property by id
     @PutMapping("/properties/{id}")
