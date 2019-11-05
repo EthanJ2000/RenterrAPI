@@ -27,6 +27,7 @@ public class PropertyDAO {
         return propertyRepository.findById(id).orElse(null);
     }
 
+
 //    Delete a Property
     public void delete(Property property){
         propertyRepository.delete(property);

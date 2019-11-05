@@ -83,4 +83,15 @@ public class Property {
     @Column(name = "numGarages")
     private int numGarages;
 
+    @NotNull
+    @Column(name = "listedBy")
+    private String listedBy;
+
+    public String getListedBy() {
+        return listedBy;
+    }
+
+    public void setListedBy(String listedBy) {
+        this.listedBy = listedBy;
+    }
 }
