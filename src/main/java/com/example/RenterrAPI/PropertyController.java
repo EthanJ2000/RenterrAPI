@@ -16,12 +16,15 @@ public class PropertyController {
     PropertyDAO propertyDAO;
 
     //New Code
-    @RequestMapping(value = "/property/properties", method = RequestMethod.GET)
-    public @ResponseBody Property getProperty(@RequestParam("id") Long id){
-            Property property = propertyDAO.findOne(id);
-            String address = property.getAddress();
-            return property;
-
+    @GetMapping
+    public String getProperties(@RequestParam(value = "address") String address){
+//        Property property = propertyDAO.findByAddress(address);
+//
+//        if (address == null){
+//            return ResponseEntity.notFound().build();
+//        }
+//        return ResponseEntity.ok().body(property);
+        return "get properties was called with address = "+address;
     }
 
     //Save a Property
