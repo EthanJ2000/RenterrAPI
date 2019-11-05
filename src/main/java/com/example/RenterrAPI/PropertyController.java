@@ -16,7 +16,7 @@ public class PropertyController {
     PropertyDAO propertyDAO;
 
     //New Code
-    @GetMapping
+    @GetMapping("/properties")
     public String getProperties(@RequestParam(value = "address") String address){
 //        Property property = propertyDAO.findByAddress(address);
 //
