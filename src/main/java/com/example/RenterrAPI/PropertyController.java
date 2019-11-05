@@ -16,7 +16,7 @@ public class PropertyController {
     PropertyDAO propertyDAO;
 
     //New Code
-    @GetMapping("/properties")
+    @GetMapping
     public String getProperties(@RequestParam(value = "address") String address){
 //        Property property = propertyDAO.findByAddress(address);
 //
@@ -24,7 +24,7 @@ public class PropertyController {
 //            return ResponseEntity.notFound().build();
 //        }
 //        return ResponseEntity.ok().body(property);
-        return "get properties was called with address = "+address;
+        return "get properties was called ";
     }
 
     //Save a Property
