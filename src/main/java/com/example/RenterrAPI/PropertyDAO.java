@@ -24,7 +24,7 @@ public class PropertyDAO {
 
 //    Get a Property by id
     public Property findOne(Long id){
-        return propertyRepository.getOne(id);
+        return propertyRepository.findById(id).orElse(null);
     }
 
 //    Delete a Property
