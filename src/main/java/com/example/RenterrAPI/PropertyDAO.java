@@ -31,7 +31,6 @@ public class PropertyDAO {
 
 // New Code
     public Property findByAddress(String address){
-
         return addressRepository.findByAddress(address);
     }
 
