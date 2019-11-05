@@ -24,7 +24,7 @@ public class PropertyController {
 //            return ResponseEntity.notFound().build();
 //        }
 //        return ResponseEntity.ok().body(property);
-        return "get properties was called ";
+        return "get properties was called with"+address;
     }
 
     //Save a Property
