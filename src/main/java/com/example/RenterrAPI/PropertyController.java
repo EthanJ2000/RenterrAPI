@@ -80,6 +80,11 @@ public class PropertyController {
         propertyDAO.delete(property);
 
         return ResponseEntity.ok().build();
+    }
 
+    @DeleteMapping("/properties/all}")
+    public ResponseEntity<Property> deleteAllProperties(){
+        propertyDAO.deleteAll();
+        return ResponseEntity.ok().build();
     }
 }

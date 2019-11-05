@@ -40,4 +40,8 @@ public class PropertyDAO {
         propertyRepository.delete(property);
     }
 
+    public void deleteAll(){
+        propertyRepository.deleteAll();
+    }
+
 }

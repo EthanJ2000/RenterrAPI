@@ -64,7 +64,7 @@ public class Property {
     private Long id;
 
     @NotBlank
-    @Column(name = "address")
+    @Column(name = "address", unique = true)
     private String address;
 
     @NotBlank
