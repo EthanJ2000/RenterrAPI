@@ -82,7 +82,7 @@ public class PropertyController {
         return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping("/properties/{address}")
+    @DeleteMapping("/properties/{listedBy}/{address}")
     public ResponseEntity<Property> deletePropertyByAddress(@PathVariable(value = "address") String address){
         Property property = propertyDAO.findByAddress(address);
         if (address == null){
